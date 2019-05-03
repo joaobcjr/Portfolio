@@ -1,10 +1,27 @@
-$(function() {
-    $('body').on('click', '.page-scroll a', function(event) {
-        let $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
+  var giro = true;
+  
+  function girar (elemento)
+  {
+    if (giro){
+      elemento.classList.toggle('is-flipped');
+      giro = false;
+    }
+    
+  }
+  
+ function girar2 (elemento)
+  {
+    if (!giro){
+      elemento.classList.toggle('is-flipped');
+      giro = true;
+    }
+    
+  }
+  
+ $(function(){ 
+     $("[id$='circle']").percircle();
+     
+     $("#clock").percircle({
+         perclock: true
+     });
+ });
